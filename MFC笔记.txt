@@ -23,10 +23,23 @@ DemoMFC02
     END_MESSAGE_MAP()
     
     DECLARE_MESSAGE_MAP()//消息映射
+DemoMFC03
+    直接创建MFC
+    单文档创建
+    类视图->CMainFrame->属性->消息WM_LBUTTONDOWN
+    View视类 相片 MainFrame类 相框
+    OnCreate Create发送WM_CREATE
+    OnDraw OnPaint
 
 
+一个字符对应一个字节 多字节
+一个字符对应多个字节 宽字节 unicode gbk utf-8
+char *p = "aaa";
+int len = strlen(p);
 
+wchar_t *p2 = L"aaa";
+int wlen = wcslen(p2);
 
-
-
+CString str;
+str.GetBuffer();
 
