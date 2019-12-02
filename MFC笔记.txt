@@ -13,8 +13,16 @@ DemoWin01
 
 DemoMFC01
     一个简单的MFC样例
-
-
+DemoMFC02
+    消息分界宏
+    //分界宏
+    BEGIN_MESSAGE_MAP(MyFrame, CFrameWnd)
+        ON_WM_LBUTTONDOWN()//鼠标左键按下 映射入口
+        ON_WM_CHAR()//键盘按下 映射入口
+        ON_WM_PAINT()//绘图
+    END_MESSAGE_MAP()
+    
+    DECLARE_MESSAGE_MAP()//消息映射
 
 
 
