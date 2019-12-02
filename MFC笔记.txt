@@ -1,10 +1,18 @@
 
+VC++之MFC类库中文手册
+
+Building MFC application with /MD[d] (CRT dll version) requires MFC shared dll version. Please #define _AFXDLL or do not use /MD[d]
+设置 在共享 DLL 中使用 MFC
+
+编译的时候，报错：“fatal error LNK1561: 必须定义入口点”
+右键->属性->链接器->系统->子系统，下拉框选择：窗口 (/SUBSYSTEM:WINDOWS)
 
 DemoWin01
     WindowsAPI一个简单的窗口样例
 
 
-
+DemoMFC01
+    一个简单的MFC样例
 
 
 
