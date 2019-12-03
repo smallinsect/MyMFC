@@ -39,6 +39,25 @@ DemoMFC05
     利用静态文本显示图片
     禁用按钮 Enable
     静态文本控件
+DemoMFC06
+    编辑框
+    mutiline多行
+    want return
+    滚动条 无限横向 无限纵向 输入
+    GetWindowText SetWindowText 设置和获取hi
+    默认小bug 单行点击回车就退出 重写OnOk
+    退出当前对话框
+    CDialog::OnOk() OnCancel
+
+    控件变成值 设置和获取内容
+    //设置内容
+    m_text = TEXT("哈哈");
+    //将变量内容 同步到控件中
+    UpdateData(FALSE);
+
+    //将控件的内容 同步到变量中
+    UpdateData(TRUE);
+    
 
 一个字符对应一个字节 多字节
 一个字符对应多个字节 宽字节 unicode gbk utf-8
