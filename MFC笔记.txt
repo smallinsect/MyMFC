@@ -69,6 +69,15 @@ DemoMFC07
     获取当前索引 getcursel
     根据索引获取内容 GetLbText(索引，CString str)
     控件时间OnCbnSelChangeCombol
+DemoMFC08
+    ListControl列表控件
+    view 报表模式 Report
+    添加表头 InsertCol
+    添加正文 从0索引
+    添加第一行第一列 InsertItem(0, "张三")
+    添加第一行的其它列 SetItemText(行，列，具体内容)
+    设置风格 正行选中 网格显示
+    m_list.SetExtendedStyle(m_list.GetExtendedStyle()|LVS_EX_FULLROWSELECT| LVS_EX_GRIDLINES);
 
 
 一个字符对应一个字节 多字节
