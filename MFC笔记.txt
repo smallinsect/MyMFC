@@ -85,7 +85,8 @@ DemoMFC09
     添加节点
         InsertItem 节点名称，显示图片，选中后显示的图片，父节点
     节点间切换
-
+DemoMFC10 /??????????????
+    标签页的使用CTabCtrl
 
 一个字符对应一个字节 多字节
 一个字符对应多个字节 宽字节 unicode gbk utf-8
