@@ -3,3 +3,6 @@
 $(SolutionDir)..\bin\$(Platform)\$(Configuration)\
 ÖÐ¼ìÄ¿Â¼
 $(SolutionDir)..\bintemp\$(Platform)\$(ProjectName)\$(Configuration)\
+
+
+_CRT_SECURE_NO_WARNINGS

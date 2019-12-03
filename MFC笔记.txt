@@ -1,11 +1,5 @@
-
-VC++之MFC类库中文手册
-
-Building MFC application with /MD[d] (CRT dll version) requires MFC shared dll version. Please #define _AFXDLL or do not use /MD[d]
-设置 在共享 DLL 中使用 MFC
-
-编译的时候，报错：“fatal error LNK1561: 必须定义入口点”
-右键->属性->链接器->系统->子系统，下拉框选择：窗口 (/SUBSYSTEM:WINDOWS)
+学习视频链接
+https://www.bilibili.com/video/av20005978/
 
 DemoWin01
     WindowsAPI一个简单的窗口样例
@@ -88,6 +82,75 @@ DemoMFC09
 DemoMFC10 /??????????????
     标签页的使用CTabCtrl
 
+SaleSystem
+    项目配置 预处理器 宏添加
+    图标的配置 引用 SetClassLong SetClassLongPtr
+    设置标题 分为左右标题 左侧-Doc OnNewDocument SetTitle 右侧-Frame SetTitle
+    设置窗口大小 MoveWindow
+    居中显示 CenterWindow
+
+    个人登录窗口功能
+        插入Dialog做登录窗口
+        界面布局 添加类
+        功能实现 点击的呢轮毂进行验证
+            输入内容不能为空
+            判断有效性
+            都成功进入管理系统
+        重写OnOk
+        消息WM_CLOSE exit(0)
+
+    静态拆分两个窗口
+        创建两个窗口类 CSelectView和CDisplayView
+        CSplitterWnd m_splitter;//切分窗口类对象通过
+        拆分成一行两列
+        创建0行0列和0行1列的数据
+    
+    树视图功能
+        .h中声明m_treeCtrl树控件 CImageList图片集合
+        获取树控件getTreeCtrl
+        准备资源
+        添加节点
+        添加事件 切换选中项
+    
+    个人信息搭建
+    自定义消息发送及界面挂载
+        声明自定义的消息NM_ABCDE
+        自定义消息 写到分解宏中 ON_MESSAGE(NM_A, OnMyChange)
+        声明OnMyChange()方法
+        SelectView中发送自定义消息::postMessage
+        根据不同的参数做不同的界面的挂载
+        界面具体挂载
+    个人信息功能完善
+        初始化内容 身份 用户名
+        判断输入的内容不能为空
+        新密码和确认密码不能一致
+        清空内容
+        取消按钮 清空内容
+    
+    销售管理功能实现
+        创建新的Dialog 进行界面布局
+        添加类 添加变量
+        初始化下拉框
+        同步库存量和单价
+        购买功能实现
+            检测数据
+            具体购买
+            同步商品库存
+            提示用户购买成功
+        取消按钮
+    
+    添加商品
+        /???????????????
+
+    库存删除
+        /???????????????
+
+    菜单设置
+        右键 添加时间处理程序
+        开始退出
+
+
+
 一个字符对应一个字节 多字节
 一个字符对应多个字节 宽字节 unicode gbk utf-8
 char *p = "aaa";
@@ -99,3 +162,28 @@ int wlen = wcslen(p2);
 CString str;
 str.GetBuffer();
 
+
+MSDN Library for Visual Studio 2008 SP1
+https://www.microsoft.com/en-us/download/details.aspx?id=20955
+2012及2013
+https://www.microsoft.com/en-us/download/details.aspx?id=34794
+官网
+https://msdn.microsoft.com/en-us/library/ms123401.aspx?f=255&MSPPError=-2147217396
+
+
+查看快速入门、教程、API 参考和代码示例。
+https://docs.microsoft.com/zh-cn/
+
+MFC 类
+https://docs.microsoft.com/zh-cn/cpp/mfc/reference/mfc-classes?view=vs-2017
+
+在线查看文档
+https://docs.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-setclasslonga
+
+VC++之MFC类库中文手册
+
+Building MFC application with /MD[d] (CRT dll version) requires MFC shared dll version. Please #define _AFXDLL or do not use /MD[d]
+设置 在共享 DLL 中使用 MFC
+
+编译的时候，报错：“fatal error LNK1561: 必须定义入口点”
+右键->属性->链接器->系统->子系统，下拉框选择：窗口 (/SUBSYSTEM:WINDOWS)
