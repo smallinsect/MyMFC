@@ -15,6 +15,9 @@ WINAPI:windowsÆ½Ì¨ÏÂµÄÏµÍ³µ÷ÓÃ£¬windows.h£¬µ÷ÓÃÏµÍ³Ìá¹©µÄÌØÊâ½Ó¿Ú£¬µÃµ½ÏµÍ³µÄ×ÊÔ
 ¾ä±ú£º½á¹¹Ìå±äÁ¿£¬´°¿Ú¾ä±úHWND£¬Í¼±ê¾ä±ú£ºHICO
 ÏûÏ¢¶ÓÁÐ ÏûÏ¢ ´°¿Ú¹ý³Ìº¯Êý
 
+PostMessage
+SendMessage
+
 main()
 WinMain()//WINAPI Èë¿ÚµØÖ·
 
@@ -32,12 +35,35 @@ WinMain()//WINAPI Èë¿ÚµØÖ·
 1¡¢Ó¦ÓÃ³ÌÐò CWinApp
 2¡¢¿ò¼ÜÀà CFrameWnd
 
+1£©ÓÐÇÒÖ»ÓÐÒ»¸öÈ«¾ÖµÄÓ¦ÓÃ³ÌÐòÀà¶ÔÏó
+2£©ÔÚ³ÌÐòÈë¿Úº¯ÊýÊµÏÖ¹¦ÄÜ InitInstance()
+    A£©¸ø¿ò¼ÜÀàMyFrame¶ÔÏó¶¯Ì¬·ÖÅä¿Õ¼ä£¨×Ô¶¯µ÷ÓÃËüµÄ¹¹Ôìº¯Êý£©
+        a£©¿ò¼ÜÀàMyFrame¶ÔÏó¹¹Ôìº¯Êýº¯ÊýÀïÃæ´´½¨´°¿Ú CWnd::Create
+    B£©¿ò¼ÜÀà¶ÔÏóÏÔÊ¾´°¿Ú CWnd::ShowWindow
+    C£©¿ò¼ÜÀà¶ÔÏó¸üÐÂ´°¿Ú CWnd::UpdateWindow
+    D£©±£´æ¿ò¼ÜÀà¶ÔÏóÖ¸Õë CWinThread::m_pMainWnd
+
+ÊÂ¼þ´¦Àí£º
+ÏûÏ¢Ó³Éä
+1¡¢Ëù²Ù×÷µÄÀà£¬ÉùÃ÷ÏûÏ¢Ó³Éäºê
+	// ÉùÃ÷ÏûÏ¢Ó³Éäºê
+	DECLARE_MESSAGE_MAP()
+2¡¢¶ÔÓ¦µÄ.cpp¶¨Òåºê
+    //¶¨ÒåÏûÏ¢ºê
+    BEGIN_MESSAGE_MAP(MyFrame, CFrameWnd)
+        ON_WM_LBUTTONDOWN()
+    END_MESSAGE_MAP()
+3¡¢¶ÔÓ¦ÀàÖÐ£¬ÏûÏ¢´¦Àíº¯ÊýµÄÉùÃ÷
+4¡¢¶ÔÓ¦.cppÏûÏ¢´¦Àíº¯ÊýµÄ¶¨Òå
+
+
 DemoWin01
     WindowsAPI´°¿Ú
 
 DemoMFC01
     MFC´°¿Ú
-
+DemoMFC02
+    ÏûÏ¢Ó³Éä
 
 
 
