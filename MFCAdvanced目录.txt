@@ -158,7 +158,43 @@ b）键盘按下（上、下、左、右），通过对话显示出来
     B）获取菜单栏中的子菜单：CMenu::GetSubMenu
         a）标志菜单：CMenu::CheckMenuItem
             MF_BYPOSITION：通过位置
-
+        b）设置默认菜单： CMenu：：SetDefaultItem
+            注意：一个菜单项只能设置一个默认菜单
+        c）禁用菜单：CMenu::EnableMenuItem
+            注意：需要把CFrameWnd::m_bAutoMenuEnable成员变量设置为FALSE
+        d）分割线
+    C）移除菜单CWnd::SetMenu
+        SetMenu(NULL);
+    D）装载菜单
+        a）创建菜单 CMenu::LoadMenu
+        b）设置菜单 CWnd::SetMenu
+        c）从CMenu对象中分离Windows菜单CMenu::Detch
+    E）菜单命令更新机制
+    F）快捷菜单，弹出菜单（一定要更新新建菜单，不能使用框架类的主菜单）
+        由于鼠标点击区域是视图区域，所以需要在视图类中处理
+        a）处理鼠标右击时间WM_RBUTTONDOWN
+        b）获取所需的子菜单
+        c）弹出菜单项 CMenu::TrackPopupMenu
+        d）客户区坐标转屏坐标：CWnd::ClientToScreen
+3）菜单相关动态操作
+    a）创建空菜单 CMenu::CreateMenu
+    b）最佳弹式菜单CMenu::AppendMenu(MF_POPUP, )
+        每个菜单都有一个菜单句柄：CMenu::m_hMenu
+        重画菜单条：CWnd::DrawMenuBar
+    c）追加普通菜单CMenu::AppendMenu(MF_STRING, );
+    d）插入菜单 CMenu::InsertMenu
+    e）删除菜单 CMenu::DeleteMenu
+五、动态图标
+1）定时器： CWnd::SetTimer
+    a）定时器信号：WM_TIMER
+    b）设置定时器应该放在OnCreate
+2）加载自定义图标（WinAIP）：LoadIcon()
+    a）将资源ID转换为字符串 MAKEINTRESOURCE()
+    b）获取应用程序实例：
+        AfxGetInstanceHandle()
+        AfxGetApp()->m_hInstance()
+3）设置图标（WinAPI）SetClassLong()
+    窗口句柄：CWnd::m_hWnd
 
 
 第三天（对话框、常用控件）
@@ -194,8 +230,8 @@ DemoMFC07
     菜单
     	//坐标转换
 	ClientToScreen(&point);
-
-
+DemoMFC08
+    定时器 修改图标
 
 
 
