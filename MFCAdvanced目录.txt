@@ -99,12 +99,43 @@ isPressTest
 m_xxxx
 m_hWnd
 
+1、请画图描述一下windows平台下消息循环时怎样的一个过程？
+2、通过WinAPI实现如下程序
+a）左击窗口，获取点击的坐标，通过对话框显示出来。
+b）键盘按下（上、下、左、右），通过对话显示出来
+3、WinAPI和MFC有什么区别和联系？
+
 第二天（绘图、文本编程、菜单）
     1、简单绘图
+        画直线
+        a)鼠标按下和抬起
+        b）创建画家对象CClientDC
+        c）起点和终点
+            CDC::MoveTo
+            CDC::LineTo
+        d）选中所属类->右击->添加变量
     2、画刷和画笔的使用
+        a）定义画家
+        b）定义画笔（画刷）
+        c）把画笔交给画家 CDC::SelectObject
     3、插入符使用
-    4、字体操作
+    4、字体操作 CFont
     5、菜单相关操作
+二、文本编辑器
+1）创建插入符CWnd::CreateSolidCaret()
+    a）创建CWnd::CreateSolidCaret()
+    b）显示CWnd::ShowCaret()
+    c）插入符的高度是根据字体的高度来确定
+        获取字体信息CDC::GetTextMetrics()
+    d）设置插入符位置CWnd::SetCaretPos()
+2）在字符消息处理函数中写字
+    a）写字CDC::TextOut()
+    b）获取字符串的尺寸信息CDC::GetTextExtent()
+    c）截取字符串（CString）左边指定长度的字符str.Left(str.GetLength() - 1);
+
+
+
+
 
 第三天（对话框、常用控件）
     1、动态图标制作（定时器）
@@ -122,8 +153,17 @@ DemoMFC02
     消息映射
 DemoMFC03
     单文档
-
-
+DemoMFC04
+    弹出键盘按下的键
+    鼠标左键 画线 鼠标左键 按下消息 抬起消息
+    CClientDC dc(this);
+	dc.MoveTo(m_point);
+	dc.LineTo(point);
+    画连续的线 鼠标移动消息 MouseMove
+    加载位图
+    画刷 画笔 字体 画家
+DemoMFC05
+    插入符操作
 
 
 
