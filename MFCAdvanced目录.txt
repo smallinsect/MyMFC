@@ -144,7 +144,20 @@ b）键盘按下（上、下、左、右），通过对话显示出来
 1）菜单的命令响应函数
     a）弹式菜单，ID不可编辑，按下去，弹出一个菜单项
     b）非弹式菜单，ID可编辑
-    C）
+    C）菜单响应命令消息的路由（顺序）
+    d）消息类型
+        非标准消息
+        WM_COMMAD，命令消息、通告消息，CCmdTarget、CWnd子类子类能接受到非标准消息
+        标准消息 WM_XXXX CWnd子类才能接受到标准消息
+        命令消息WM_COMMAD
+        CWnd可以接受任何消息
+        CCmdTarget不能接受任何消息
+2）菜单相关静态操作
+在框架类中进行相应操作，在OnCreate()中实现
+    A）获取菜单栏：CWnd::GetMenu
+    B）获取菜单栏中的子菜单：CMenu::GetSubMenu
+        a）标志菜单：CMenu::CheckMenuItem
+            MF_BYPOSITION：通过位置
 
 
 
@@ -175,7 +188,12 @@ DemoMFC04
     画刷 画笔 字体 画家
 DemoMFC05
     插入符操作
-
+DemoMFC06
+    定时器
+DemoMFC07
+    菜单
+    	//坐标转换
+	ClientToScreen(&point);
 
 
 
