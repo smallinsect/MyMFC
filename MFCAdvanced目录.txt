@@ -132,8 +132,19 @@ b）键盘按下（上、下、左、右），通过对话显示出来
     a）写字CDC::TextOut()
     b）获取字符串的尺寸信息CDC::GetTextExtent()
     c）截取字符串（CString）左边指定长度的字符str.Left(str.GetLength() - 1);
-
-
+三、字体渐变
+1）定时器的使用
+    a）设置定时器：CWnd::SetTimer()
+    b）关闭定时器：CWnd::KillTimer()
+    c）定时器消息：WM_TIMER
+2）视图类中的OnDraw()中，写字CDC::TextOutW()
+3）指定区域写字：CDC::DrawText()
+4）让窗口失效，产生WM_PAINT，间接调用OnDraw()函数：CWnd::Invalidate
+四、菜单的相关操作
+1）菜单的命令响应函数
+    a）弹式菜单，ID不可编辑，按下去，弹出一个菜单项
+    b）非弹式菜单，ID可编辑
+    C）
 
 
 

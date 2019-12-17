@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DemoMFC04", "DemoMFC04\Demo
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DemoMFC05", "DemoMFC05\DemoMFC05.vcxproj", "{8346AB25-4AC1-46A4-A32A-134E8C926A10}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DemoMFC06", "DemoMFC06\DemoMFC06.vcxproj", "{37158E35-08A0-4A18-9D1C-A8CA82EB9A52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -81,6 +83,14 @@ Global
 		{8346AB25-4AC1-46A4-A32A-134E8C926A10}.Release|x64.Build.0 = Release|x64
 		{8346AB25-4AC1-46A4-A32A-134E8C926A10}.Release|x86.ActiveCfg = Release|Win32
 		{8346AB25-4AC1-46A4-A32A-134E8C926A10}.Release|x86.Build.0 = Release|Win32
+		{37158E35-08A0-4A18-9D1C-A8CA82EB9A52}.Debug|x64.ActiveCfg = Debug|x64
+		{37158E35-08A0-4A18-9D1C-A8CA82EB9A52}.Debug|x64.Build.0 = Debug|x64
+		{37158E35-08A0-4A18-9D1C-A8CA82EB9A52}.Debug|x86.ActiveCfg = Debug|Win32
+		{37158E35-08A0-4A18-9D1C-A8CA82EB9A52}.Debug|x86.Build.0 = Debug|Win32
+		{37158E35-08A0-4A18-9D1C-A8CA82EB9A52}.Release|x64.ActiveCfg = Release|x64
+		{37158E35-08A0-4A18-9D1C-A8CA82EB9A52}.Release|x64.Build.0 = Release|x64
+		{37158E35-08A0-4A18-9D1C-A8CA82EB9A52}.Release|x86.ActiveCfg = Release|Win32
+		{37158E35-08A0-4A18-9D1C-A8CA82EB9A52}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
