@@ -200,8 +200,33 @@ b）键盘按下（上、下、左、右），通过对话显示出来
 第三天（对话框、常用控件）
     1、动态图标制作（定时器）
     2、对话框（模态和非模态）
+        1）模态对话框
+            a）资源视图->Dialog->右击->插入Dialog
+            b）创建对话框对象CDialog
+            c）以模态方式运行CDialog::DoModal
+        2）非模态对话框
+            a）资源视图->Dialog->右击->插入Dialog
+            b）创建对话框对象，需要在.h的地方声明成员变量CDialog
+            c）创建对话框（在构造函数或OnCreate()，目的只创建一次）CDialog::Create
+            d）显示窗口CWnd::ShowWindow
+        3）自定义对话框类（重要）
+            a）资源视图->Dialog->右击->插入Dialog
+            b）点击对话框模板->右击->添加类
+            c）多出一个自定义类，.h类中有个枚举和对话框关联enum{IDD=IDD_DIALOG2}
     3、基于对话框的编程
+        1）基于对话框引用程序框架
+            a）应用程序类：继承于CWinApp
+                InitInstance()：程序入口地址
     4、常用控件的使用
+
+第四天（文档和视图、数据库编程）
+    1、文档视图结构介绍
+    2、CArchive类的使用
+    3、MFC odbc操作数据库
+
+第五天和第六天：药品库存管理系统
+    
+
 
 
 DemoWin01
@@ -232,7 +257,16 @@ DemoMFC07
 	ClientToScreen(&point);
 DemoMFC08
     定时器 修改图标
-
+    //修改图标
+	SetClassLongPtr(m_hWnd, GCLP_HICON, (LONG_PTR)icon[i]);
+DemoMFC09
+    加载图标
+	pDC->DrawIcon(10, i*50, hicon[i]);
+DemoMFC10
+    模态框
+        模态对话框
+        非模态对话框
+        自定义模态对话框
 
 
 
