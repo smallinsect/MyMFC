@@ -217,8 +217,19 @@ b）键盘按下（上、下、左、右），通过对话显示出来
         1）基于对话框引用程序框架
             a）应用程序类：继承于CWinApp
                 InitInstance()：程序入口地址
+            b）对话框类：继承于CDialogEx
+                OnInitDialog()：对话框的初始化工作
+                DoDataExchange()：控件和变量的关联和交换
     4、常用控件的使用
-
+        1）静态控件CStatic（Qt中的标签QLabel）
+            显示一些文字信息
+            a）Caption：修改显示的内容
+            b）ID：XXXX_STATIC，静态ID，不影响任何消息（事件）
+        2）按钮CButton
+            a）Caption：修改显示的内容
+            b）处理消息 BN_CLICKED，用户点击按钮自动触发：
+                1）属性->控件事件->选择所需事件
+                2）双击按钮，自动生成消息处理函数
 第四天（文档和视图、数据库编程）
     1、文档视图结构介绍
     2、CArchive类的使用
@@ -267,7 +278,8 @@ DemoMFC10
         模态对话框
         非模态对话框
         自定义模态对话框
-
+DemoMFC11
+    基于对话框，逃跑按钮。
 
 
 
