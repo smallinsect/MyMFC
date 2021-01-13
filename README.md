@@ -13,7 +13,7 @@ _CRT_SECURE_NO_WARNINGS
 
 # 控件
 
-## ListBox控件
+## ListBox列表框
 
 ### 1.向列表框空间中添加数据
 
@@ -99,16 +99,76 @@ delete[] pszText;
 
 https://www.codeproject.com/KB/combobox
 
+## ListCtl列表控件
 
+### 选择视图
 
+选中控件->属性->View 选择Report
 
+给控件绑定变量
 
+### 添加标题
 
+```c++
+m_List.InsertColumn(0, TEXT("第1列"), LVCFMT_LEFT, 70);//插入标题
+m_List.InsertColumn(1, TEXT("第2列"), LVCFMT_LEFT, 70);//插入标题
+m_List.InsertColumn(2, TEXT("第3列"), LVCFMT_LEFT, 70);//插入标题
+```
+### 控件添加样式
 
+```c++
+DWORD dwStyle = m_List.GetExtendedStyle();// 获取已有样式
+dwStyle |= LVS_EX_GRIDLINES;
+m_List.SetExtendedStyle(dwStyle);// 设置样式
+```
+### 插入行数据
 
+```c++
+// 最后一行，第一列插入数据
+m_List.InsertItem(m_List.GetItemCount(), TEXT("小昆虫1"));
+```
+```c++
+DWORD dwIdx = m_List.GetItemCount();
+m_List.InsertItem(dwIdx, TEXT("小昆虫1"));
+m_List.SetItemText(dwIdx, 0, TEXT("小昆虫x"));
+m_List.SetItemText(dwIdx, 1, TEXT("小昆虫2"));
+m_List.SetItemText(dwIdx, 2, TEXT("小昆虫3"));
+```
+### 整行选中样式
 
+```c++
+LVS_EX_FULLROWSELECT
+```
 
+### 列前有选择框
 
+```
+LVS_EX_CHECKBOXES
+```
+
+### 选中某一行
+
+```c++
+m_List.SetFocus();//这句别忘了，不然不能高亮。
+m_List.SetItemState(1, LVIS_SELECTED | LVIS_FOCUSED, LVIS_SELECTED | LVIS_FOCUSED);
+```
+### 取消选中
+
+```
+m_List.SetItemState(1, 0, LVIS_SELECTED | LVIS_FOCUSED);
+```
+
+### 遍历列表
+
+```c++
+// 遍历列表
+int iCnt = m_List.GetItemCount();
+for (int idx = 0; idx < iCnt; ++idx) {
+	CString str = m_List.GetItemText(idx, 0);
+	str = m_List.GetItemText(idx, 1);
+	str = m_List.GetItemText(idx, 2);
+}
+```
 
 
 
